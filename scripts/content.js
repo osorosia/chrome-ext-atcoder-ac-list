@@ -21,9 +21,11 @@ if (taskStatement) {
 
   // Create button
   const buttonRust = createButton("Rust");
-  const buttonFSharp = createButton("C%2B%2B", "C++");
+  const buttonCpp = createButton("C%2B%2B", "C++");
+  const buttonCSharp = createButton("C%23", "C#");
 
   // Add button
   taskStatement.insertAdjacentElement("beforebegin", buttonRust);
-  taskStatement.insertAdjacentElement("beforebegin", buttonFSharp);
+  taskStatement.insertAdjacentElement("beforebegin", buttonCpp);
+  taskStatement.insertAdjacentElement("beforebegin", buttonCSharp);
 }
