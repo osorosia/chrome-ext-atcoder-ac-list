@@ -9,8 +9,8 @@ if (taskStatement) {
   var contestName = matches[1];
   var problemName = matches[2];
 
-  const createButton = (lang, buttonName) => {
-    const destURL = `https://atcoder.jp/contests/${contestName}/submissions?f.LanguageName=${lang}&f.Status=AC&f.User=&orderBy=created&f.Task=${problemName}`;
+  const createButton = (lang, buttonName, userName = "") => {
+    const destURL = `https://atcoder.jp/contests/${contestName}/submissions?f.LanguageName=${lang}&f.Status=AC&f.User=${userName}&orderBy=created&f.Task=${problemName}`;
     const button = document.createElement("button");
     button.innerHTML = buttonName ?? lang;
     button.onclick = () => {
@@ -19,13 +19,9 @@ if (taskStatement) {
     return button;
   };
 
-  // Create button
-  const buttonRust = createButton("Rust");
-  const buttonCpp = createButton("C%2B%2B", "C++");
-  const buttonCSharp = createButton("C%23", "C#");
-
   // Add button
-  taskStatement.insertAdjacentElement("beforebegin", buttonRust);
-  taskStatement.insertAdjacentElement("beforebegin", buttonCpp);
-  taskStatement.insertAdjacentElement("beforebegin", buttonCSharp);
+  taskStatement.insertAdjacentElement("beforebegin", createButton("", "SSRS", "SSRS"));
+  taskStatement.insertAdjacentElement("beforebegin", createButton("C%2B%2B", "C++"));
+  taskStatement.insertAdjacentElement("beforebegin", createButton("C%2B%2B", "C++"));
+  taskStatement.insertAdjacentElement("beforebegin", createButton("C%23", "C#"));
 }
