@@ -22,6 +22,5 @@ if (taskStatement) {
   // Add button
   taskStatement.insertAdjacentElement("beforebegin", createButton("", "SSRS", "SSRS"));
   taskStatement.insertAdjacentElement("beforebegin", createButton("C%2B%2B", "C++"));
-  taskStatement.insertAdjacentElement("beforebegin", createButton("C%2B%2B", "C++"));
   taskStatement.insertAdjacentElement("beforebegin", createButton("C%23", "C#"));
 }
